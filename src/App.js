@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 import './App.css';
 
+const API_HOST = process.env.REACT_APP_BOOKS_API || 'http://localhost:3000';
 class App extends Component {
 	constructor() {
 		super();
 		this.state = {
-			books: []
+			books: [],
+			authors: []
 		};
 	}
 
 	async getBooks() {
-		const url = process.env.REACT_APP_BOOKS_API || 'http://localhost:3000/books';
+		const url = `${API_HOST}/books`;
 		const response = await fetch(url);
 		const data = await response.json();
 		this.setState({
@@ -18,15 +20,30 @@ class App extends Component {
 		});
 	}
 
+	async getAuthors() {
+		const url = `${API_HOST}/authors`;
+		const response = await fetch(url);
+		const data = await response.json();
+		this.setState({
+			authors: data
+		});
+	}
+
 	componentDidMount() {
 		this.getBooks();
+		this.getAuthors();
 	}
 
 	render() {
 		return (
 			<div>
+				<h1>BOOKS</h1>
 				{this.state.books.map((book) => {
 					return <li key={book._id}>{book.title}</li>;
+				})}
+				<h1>AUTHORS</h1>
+				{this.state.books.map((author) => {
+					return <li key={author._id}>{author.name}</li>;
 				})}
 			</div>
 		);
