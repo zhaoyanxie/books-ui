@@ -8,7 +8,6 @@ class App extends Component {
 			books: []
 		};
 	}
-
 	async getBooks() {
 		const url = process.env.REACT_APP_BOOKS_API || 'http://localhost:3000/books';
 		const response = await fetch(url);
