@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render only the book title before componentDidMount is called 1`] = `
+<div
+  className="book"
+>
+  <h1>
+    Books
+  </h1>
+</div>
+`;
+
+exports[`should render title and booklist after component did mount 1`] = `
+<div
+  className="book"
+>
+  <h1>
+    Books
+  </h1>
+  <li>
+    book title 1
+  </li>
+  <li>
+    book title 2
+  </li>
+</div>
+`;

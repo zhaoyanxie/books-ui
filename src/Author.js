@@ -23,6 +23,7 @@ export default class Author extends Component {
 	render() {
 		return (
 			<div className="Author">
+        <h1>Authors</h1>
 				{this.state.authors.map((author) => {
 					return <li key={author._id}>{author.name}</li>;
 				})}

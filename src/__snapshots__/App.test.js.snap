@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders App and test snapshot 1`] = `
+<div>
+  <Book />
+  <h1>
+    AUTHORS
+  </h1>
+  <Author />
+</div>
+`;
+
+exports[`renders Some Component 1`] = `
+<div>
+  I am from SomeComponent
+</div>
+`;

@@ -15,10 +15,7 @@ class App extends Component {
 	render() {
 		return (
 			<div>
-				<h1>BOOKS</h1>
 				<Book />
-
-				<h1>AUTHORS</h1>
 				<Author />
 			</div>
 		);

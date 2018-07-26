@@ -20,13 +20,14 @@ export default class Book extends Component {
 		}
 	}
 
-	componentDidMount() {
-		this.getBooks();
+	async componentDidMount() {
+		await this.getBooks();
 	}
 
 	render() {
 		return (
 			<div className="book">
+				<h1>Books</h1>
 				{this.state.books.map((book) => {
 					return <li key={book._id}>{book.title}</li>;
 				})}
